@@ -44,13 +44,11 @@ app
           if (result.password === password) {
             res.render("secret");
           } else {
-            console.log("Incorect Password");
             res.render("error", {
               message: "Incorrect password! make sure your password is correct."
             });
           }
         } else {
-          console.log("Register Yourself");
           res.render("error", {
             message: "Not Registered! make sure you register yourself."
           });
@@ -77,7 +75,6 @@ app
       password: password
     });
     newUser.save().then(() => {
-      console.log("Successfully registered.");
       res.render("error", {
         message: "Woohu! Sucessfully register."
       });
